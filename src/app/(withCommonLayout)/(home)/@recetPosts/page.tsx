@@ -1,7 +1,8 @@
 import React from "react";
-import ProductCard from "./Cards";
+
 import { getRecentPost } from "@/src/services/RecentPost";
 import { TPost } from "@/src/types";
+import ProductCard from "@/src/components/modules/Home/Cards";
 
 const RecentPost = async () => {
   const { data: posts } = await getRecentPost();
@@ -13,7 +14,7 @@ const RecentPost = async () => {
       </h3>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5">
         {posts.map((post: TPost) => (
-          <ProductCard post={post} />
+          <ProductCard key={post?._id} post={post} />
         ))}
       </div>
     </div>
