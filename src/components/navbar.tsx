@@ -25,6 +25,8 @@ import {
   SearchIcon,
   Logo,
 } from "@/src/components/icons";
+import { Avatar } from "@nextui-org/avatar";
+import DropsownItems from "./dropdown";
 
 export const Navbar = () => {
   const searchInput = (
@@ -82,9 +84,15 @@ export const Navbar = () => {
         <NavbarItem className="hidden lg:block">
           <ThemeSwitch />
         </NavbarItem>
+        <NavbarItem className="hidden lg:block">
+          <DropsownItems />
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="lg:hidden basis-1 pl-4" justify="end">
+        <NavbarItem className="">
+          <DropsownItems />
+        </NavbarItem>
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
